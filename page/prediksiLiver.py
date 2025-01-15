@@ -14,7 +14,7 @@ from geopy.geocoders import Photon
 import xgboost as xgb
 import json
 from math import radians, sin, cos, sqrt, atan2
-##! ayanggg aku skripsian dlu ya :D
+##! cape banget asli debugging mulu -_-
 ##TODO:  AKTIFKAN DEFINISI DIBAWAH INI JIKA INGIN MENAMPILKAN FITUR TO CSV
 
 # def save_to_csv(input_data, prediction, filename='new_patient_data.csv'):
@@ -48,7 +48,7 @@ from math import radians, sin, cos, sqrt, atan2
     # Fungsi get_location_from_address tetap sama
 def get_location_from_address(address):
         try:
-            geolocator = Photon(user_agent="gilang_liver_prediction_app")
+            geolocator = Photon(user_agent="gilang_liver_prediction_app") ##TODO : INI GILANG MENGUBAH PAKAI PHOTON, DAN UNIQ USER AGENT
             location = geolocator.geocode(address)
             if location:
                 return location.latitude, location.longitude
@@ -309,7 +309,7 @@ def liver_prediction_system():
                 if liver_prediction[0] == 0:
                     liver_diagnosis = '🚨 Pasien terindikasi penyakit liver'
                     st.warning(liver_diagnosis)
-                    st.write(f"Probabilitas: {prediction_proba[0][0]:.2%}")
+                    # st.write(f"Probabilitas: {prediction_proba[0][0]:.2%}")
                     
                     # Show hospital recommendation
                     st.error("""
@@ -358,7 +358,7 @@ def liver_prediction_system():
                 else:
                     liver_diagnosis = 'Pasien tidak terkena penyakit liver'
                     st.success(liver_diagnosis)
-                    st.write(f"Probabilitas: {prediction_proba[0][1]:.2%}")
+                    # st.write(f"Probabilitas: {prediction_proba[0][1]:.2%}")
 
 
 ##? dibawah ini fitur lama tentang data inputan bisa tersave dan di download sebagai csv
