@@ -10,6 +10,7 @@ import folium
 from streamlit_folium import folium_static
 import requests
 from geopy.geocoders import Nominatim
+from geopy.geocoders import Photon
 import xgboost as xgb
 import json
 from math import radians, sin, cos, sqrt, atan2
@@ -47,7 +48,7 @@ from math import radians, sin, cos, sqrt, atan2
     # Fungsi get_location_from_address tetap sama
 def get_location_from_address(address):
         try:
-            geolocator = Nominatim(user_agent="gilang_liver_prediction_app")
+            geolocator = Photon(user_agent="gilang_liver_prediction_app")
             location = geolocator.geocode(address)
             if location:
                 return location.latitude, location.longitude
