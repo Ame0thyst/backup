@@ -47,7 +47,7 @@ from math import radians, sin, cos, sqrt, atan2
     # Fungsi get_location_from_address tetap sama
 def get_location_from_address(address):
         try:
-            geolocator = Nominatim(user_agent="liver_prediction_app")
+            geolocator = Nominatim(user_agent="gilang_liver_prediction_app")
             location = geolocator.geocode(address)
             if location:
                 return location.latitude, location.longitude
