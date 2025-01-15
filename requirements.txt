@@ -1,0 +1,13 @@
+numpy==1.26.4
+pandas==2.2.2
+streamlit
+scikit-learn==1.5.2
+pip==24.3.1
+streamlit_option_menu
+Pillow
+xgboost===2.1.0
+folium
+streamlit-folium
+geopy
+requests
+streamlit-js-eval
